@@ -1,0 +1,608 @@
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+	<SOAP-ENV:Header />
+	<SOAP-ENV:Body>
+		<wp:PublishProductRequest xsi:schemaLocation="http://uicds.org/WorkProductService"
+			xmlns:ddms="http://metadata.dod.mil/mdr/ns/DDMS/2.0/" xmlns:ucore="http://ucore.gov/ucore/2.0"
+			xmlns:wp="http://uicds.org/WorkProductService" xmlns:gml="http://www.opengis.net/gml/3.2"
+			xmlns:precisb="http://www.saic.com/precis/2009/06/base"
+			xmlns:preciss="http://www.saic.com/precis/2009/06/structures"
+			xmlns:precisp="http://www.saic.com/precis/2009/06/payloads"
+			xmlns:ulexlib="ulex:message:library:1.0" xmlns:ulex="ulex:message:structure:1.0"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<preciss:WorkProduct>
+				<ulex:PackageMetadata>
+					<!-- These are required by the spec, but will be rewritten by the server 
+						once submitted -->
+					<ulex:DataItemID>DataItemID Required</ulex:DataItemID>
+					<ulex:DataItemReferenceID xsi:nil="true" />
+					<ucore:DataItemStatus ucore:label="Active" />
+
+					<!-- This block is required by the spec but can be left as empty elements -->
+					<ulex:DataOwnerMetadata>
+						<ucore:DataOwnerIdentifier>
+							<ddms:Organization>
+								<ddms:name />
+							</ddms:Organization>
+						</ucore:DataOwnerIdentifier>
+						<ucore:DataOwnerContact>
+							<ddms:Organization>
+								<ddms:name />
+							</ddms:Organization>
+						</ucore:DataOwnerContact>
+					</ulex:DataOwnerMetadata>
+					<ucore:DisseminationCriteria />
+
+					<!-- product type is Link -->
+					<preciss:WorkProductIdentification>
+						<precisb:Type>TEP</precisb:Type>
+					</preciss:WorkProductIdentification>
+
+					<!-- if you want to associate the WP with an incident, do it here (dont 
+						forget to change the interest group ID!) -->
+					<preciss:WorkProductProperties>
+						<base:AssociatedGroups xmlns:base="http://www.saic.com/precis/2009/06/base">
+							<base:Identifier>IG-ad8b3d19-7d72-40c3-a8fd-0db873248dd6
+							</base:Identifier>
+						</base:AssociatedGroups>
+					</preciss:WorkProductProperties>
+
+				</ulex:PackageMetadata>
+				<ucore:Digest>
+					<ucore:DigestMetadata />
+
+					<!-- Providing a digest with an entity ensures that the object is available 
+						to the search subsystem (and kml renderer) -->
+					<ucore:Event id="Entity001">
+						<!-- The link goes in the description. You can use html snippets, but 
+							remember to escape character entities -->
+						<ucore:Descriptor>If you want the link to be clickable in a Google
+							Earth balloon, &lt;br /&gt; create an HTML snippet like this. The
+							link should go into an HTML href - &lt;a
+							href=&quot;http://ifuicds-test1.picahld.net/ChlorineSpillNorfolk.kml&quot;
+							&gt;CLICK ME!&lt;/a&gt;</ucore:Descriptor>
+						<ucore:What ucore:code="Equipment"
+							ucore:codespace="http://ucore.gov/ucore/2.0/codespace/" />
+					</ucore:Event>
+
+				</ucore:Digest>
+
+				<ulex:StructuredPayload>
+					<ulex:StructuredPayloadMetadata>
+						<!-- Should be the payload namespace -->
+						<ulex:CommunityURI>urn:oasis:names:tc:emergency:EDXL:TEP:1.0</ulex:CommunityURI>
+						<ulex:CommunityVersion>1.0</ulex:CommunityVersion>
+						<ulex:CommunityPedigreeURI
+							ulex:pedigreeNumber="1">http://www.saic.com/precis/2009/06/payloads/link
+						</ulex:CommunityPedigreeURI>
+					</ulex:StructuredPayloadMetadata>
+					<TEPMessage xmlns="urn:oasis:names:tc:emergency:EDXL:TEP:1.0">
+						<messageID>2016032819524180963</messageID>
+						<systemID>GER HC</systemID>
+						<patient>
+							<patientID>
+								<ID>00583159</ID>
+								<source>
+									<ValueListURI xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">http://www.ger911.com/tep/
+									</ValueListURI>
+									<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">HC</Value>
+								</source>
+							</patientID>
+							<gender>650</gender>
+							<patientAge>
+								<age>44</age>
+								<estimated>unknown</estimated>
+								<units>715</units>
+							</patientAge>
+							<!-- ADD:: Patient Info Panel <raceEthnicity> <ValueListURI xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">http://uri1</ValueListURI> 
+								<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">Value1</Value> <Value 
+								xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">Value2</Value> <Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">Value3</Value> 
+								</raceEthnicity> -->
+							<!-- ADD:: Patient Info Panel <dateOfBirth>1900-01-01</dateOfBirth> -->
+							<!-- ADD:: Middle Name & Suffix to HC Mobile -->
+							<personalID>
+								<PersonName xmlns="urn:oasis:names:tc:emergency:edxl:ciq:1.0:xnl">
+									<NameElement p5:ElementType="FirstName"
+										xmlns:p5="urn:oasis:names:tc:emergency:edxl:ciq:1.0:xnl">Ernie</NameElement>
+									<NameElement p5:ElementType="MiddleName"
+										xmlns:p5="urn:oasis:names:tc:emergency:edxl:ciq:1.0:xnl"></NameElement>
+									<NameElement p5:ElementType="LastName"
+										xmlns:p5="urn:oasis:names:tc:emergency:edxl:ciq:1.0:xnl">Edwards </NameElement>
+									<NameElement p5:ElementType="Suffix"
+										xmlns:p5="urn:oasis:names:tc:emergency:edxl:ciq:1.0:xnl"></NameElement>
+								</PersonName>
+								<Addresses xmlns="urn:oasis:names:tc:emergency:edxl:ciq:1.0:xpil">
+									<Address>
+										<FreeTextAddress
+											xmlns="urn:oasis:names:tc:emergency:edxl:ciq:1.0:xal">
+											<AddressLine_Address>3 road drive </AddressLine_Address>
+											<AddressLine_City>Hampshire </AddressLine_City>
+											<AddressLine_State>HI</AddressLine_State>
+											<AddressLine_Zip>55555</AddressLine_Zip>
+										</FreeTextAddress>
+									</Address>
+								</Addresses>
+								<ContactNumbers xmlns="urn:oasis:names:tc:emergency:edxl:ciq:1.0:xpil">
+									<!-- ADD:: parsing for phone # -->
+									<ContactNumber p5:CommunicationMediaType="Cellphone"
+										p5:Usage="Usage1" p5:ContactHours="ContactHours1"
+										xmlns:p5="urn:oasis:names:tc:emergency:edxl:ciq:1.0:xpil">
+										<p5:ContactNumberElement p5:Type="CountryCode"></p5:ContactNumberElement>
+										<p5:ContactNumberElement p5:Type="AreaCode"></p5:ContactNumberElement>
+										<p5:ContactNumberElement p5:Type="LocalNumber">758-546-5545
+										</p5:ContactNumberElement>
+									</ContactNumber>
+								</ContactNumbers>
+							</personalID>
+							<!-- FREE txt -->
+							<medicationAllergies>
+								<ValueListURI xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">http://www.ger911.com/tep/
+								</ValueListURI>
+								<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">May be a few days of the same time </Value>
+							</medicationAllergies>
+							<!-- FREE txt -->
+							<currentMedication>
+								<name>
+									<ValueListURI xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">http://www.ger911.com/tep/
+									</ValueListURI>
+									<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">Could </Value>
+								</name>
+							</currentMedication>
+							<!-- ADD:: emergency contact info section.... -->
+							<patientContactInformation>
+								<PersonName xmlns="urn:oasis:names:tc:emergency:edxl:ciq:1.0:xnl">
+									<NameElement p5:ElementType="FirstName"
+										xmlns:p5="urn:oasis:names:tc:emergency:edxl:ciq:1.0:xnl">Ernie</NameElement>
+									<NameElement p5:ElementType="MiddleName"
+										xmlns:p5="urn:oasis:names:tc:emergency:edxl:ciq:1.0:xnl"></NameElement>
+									<NameElement p5:ElementType="LastName"
+										xmlns:p5="urn:oasis:names:tc:emergency:edxl:ciq:1.0:xnl">Edwards </NameElement>
+									<NameElement p5:ElementType="Suffix"
+										xmlns:p5="urn:oasis:names:tc:emergency:edxl:ciq:1.0:xnl"></NameElement>
+								</PersonName>
+							</patientContactInformation>
+							<situation>
+								<incidentID>
+									<name>Test Incident</name>
+									<ID>11207</ID>
+									<kind>
+										<ValueListURI xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">http://www.ger911.com/tep/
+										</ValueListURI>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">UNKNOWN</Value>
+									</kind>
+									<source>HC</source>
+								</incidentID>
+								<incidentLocation>
+									<EDXLGeoLocation xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">
+										<Point srsName="http://uri1" srsDimension="1"
+											axisLabels="Latitude Longitude" uomLabels="Latitude Longitude"
+											p6:id="ID1" xmlns:p6="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2">
+											<p6:pos>33.517385 -82.04208</p6:pos>
+										</Point>
+									</EDXLGeoLocation>
+								</incidentLocation>
+							</situation>
+							<!-- HARD CODE? -->
+							<!-- WHAT CAN WE HERE -->
+							<healthCareProvider>
+								<providerNumber>
+									<ValueListURI xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">http://www.ger911.com/tep/
+									</ValueListURI>
+									<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">HC</Value>
+								</providerNumber>
+								<providerName></providerName>
+								<providerJurisdiction>
+									<FreeTextAddress
+										xmlns="urn:oasis:names:tc:emergency:edxl:ciq:1.0:xal">
+
+									</FreeTextAddress>
+								</providerJurisdiction>
+							</healthCareProvider>
+							<patientEncounter>
+								<encounterID>1034</encounterID>
+								<encounterDateTime>2016-03-28T19:52:31.59</encounterDateTime>
+								<locationCategory>
+									<ValueListURI xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">http://www.ger911.com/tep/
+									</ValueListURI>
+									<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">HC</Value>
+								</locationCategory>
+								<encounterLocation>
+									<!-- 33.517385 -82.04208 <EDXLGeoLocation xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0"> 
+										<Point srsName="http://uri2" srsDimension="79228162514264337593543950335" 
+										axisLabels="axisLabels4 axisLabels5 axisLabels6 " uomLabels="uomLabels4 uomLabels5 
+										uomLabels6 " p6:id="ID2" xmlns:p6="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2"> 
+										<p6:pos srsName="http://uri2" srsDimension="79228162514264337593543950335" 
+										axisLabels="axisLabels4 axisLabels5 axisLabels6 " uomLabels="uomLabels4 uomLabels5 
+										uomLabels6 ">-0.10000002384185791 2.1000000238418579 -1.7976931348623157E+308 
+										</p6:pos> </Point> </EDXLGeoLocation> -->
+								</encounterLocation>
+								<patientCare>
+									<patientCareRecordID>00583159</patientCareRecordID>
+									<patientCareRecordDateTime>2016-03-07T12:23:50</patientCareRecordDateTime>
+									<systolicBloodPressure>120</systolicBloodPressure>
+									<diastolicBloodPressure>80</diastolicBloodPressure>
+									<pulseRate>66</pulseRate>
+									<respiratoryRate>55</respiratoryRate>
+									<temperature>97</temperature>
+									<pulseOximetry></pulseOximetry>
+									<bloodGlucoseLevel></bloodGlucoseLevel>
+								</patientCare>
+
+
+								<patientCare>
+									<patientCareRecordID>00583159</patientCareRecordID>
+									<patientCareRecordDateTime>2016-03-15T11:02:28.58</patientCareRecordDateTime>
+									<systolicBloodPressure>155</systolicBloodPressure>
+									<diastolicBloodPressure>80</diastolicBloodPressure>
+									<pulseRate>66</pulseRate>
+									<respiratoryRate>55</respiratoryRate>
+									<temperature>97</temperature>
+									<pulseOximetry></pulseOximetry>
+									<bloodGlucoseLevel></bloodGlucoseLevel>
+								</patientCare>
+
+								<patientCare>
+									<patientCareRecordID>00583159</patientCareRecordID>
+									<patientCareRecordDateTime>2016-03-15T11:02:28.58</patientCareRecordDateTime>
+									<systolicBloodPressure>155</systolicBloodPressure>
+									<diastolicBloodPressure>80</diastolicBloodPressure>
+									<pulseRate>66</pulseRate>
+									<respiratoryRate>55</respiratoryRate>
+									<temperature>97</temperature>
+									<pulseOximetry></pulseOximetry>
+									<bloodGlucoseLevel></bloodGlucoseLevel>
+								</patientCare>
+
+
+								<patientCare>
+									<patientCareRecordID>00583159</patientCareRecordID>
+									<patientCareRecordDateTime>2016-03-15T11:03:59.473</patientCareRecordDateTime>
+									<systolicBloodPressure>155</systolicBloodPressure>
+									<diastolicBloodPressure>75</diastolicBloodPressure>
+									<pulseRate>66</pulseRate>
+									<respiratoryRate>55</respiratoryRate>
+									<temperature>97</temperature>
+									<pulseOximetry></pulseOximetry>
+									<bloodGlucoseLevel></bloodGlucoseLevel>
+								</patientCare>
+
+
+								<patientCare>
+									<patientCareRecordID>00583159</patientCareRecordID>
+									<patientCareRecordDateTime>2016-03-15T11:07:11.663</patientCareRecordDateTime>
+									<systolicBloodPressure>160</systolicBloodPressure>
+									<diastolicBloodPressure>75</diastolicBloodPressure>
+									<pulseRate>66</pulseRate>
+									<respiratoryRate>55</respiratoryRate>
+									<temperature>97</temperature>
+									<pulseOximetry></pulseOximetry>
+									<bloodGlucoseLevel></bloodGlucoseLevel>
+								</patientCare>
+
+
+								<patientCare>
+									<patientCareRecordID>00583159</patientCareRecordID>
+									<patientCareRecordDateTime>2016-03-15T11:08:02.243</patientCareRecordDateTime>
+									<systolicBloodPressure>160</systolicBloodPressure>
+									<diastolicBloodPressure>75</diastolicBloodPressure>
+									<pulseRate>66</pulseRate>
+									<respiratoryRate>50</respiratoryRate>
+									<temperature>97</temperature>
+									<pulseOximetry></pulseOximetry>
+									<bloodGlucoseLevel></bloodGlucoseLevel>
+								</patientCare>
+
+
+								<patientCare>
+									<patientCareRecordID>00583159</patientCareRecordID>
+									<patientCareRecordDateTime>2016-03-28T12:32:41.337</patientCareRecordDateTime>
+									<triageStatus>331001</triageStatus>
+									<patientCurrentDisposition>Transported</patientCurrentDisposition>
+									<chiefComplaint>
+										Lolls,djvkjbsg\HeadInjury,
+									</chiefComplaint>
+									<systolicBloodPressure>160</systolicBloodPressure>
+									<diastolicBloodPressure>75</diastolicBloodPressure>
+									<pulseRate>66</pulseRate>
+									<respiratoryRate>50</respiratoryRate>
+									<temperature>97</temperature>
+									<pulseOximetry></pulseOximetry>
+									<bloodGlucoseLevel></bloodGlucoseLevel>
+									<mentalStatus>3255</mentalStatus>
+									<proceduresPerformed>
+										<ValueListURI xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">http://www.ger911.com/tep/
+										</ValueListURI>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">TreatmentComments:Kluges
+										</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">CombiKing:True</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">CPAP:True</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">IV:True</Value>
+
+									</proceduresPerformed>
+								</patientCare>
+
+
+								<patientCare>
+									<patientCareRecordID>00583159</patientCareRecordID>
+									<patientCareRecordDateTime>2016-03-28T19:10:36.013</patientCareRecordDateTime>
+									<triageStatus>331000</triageStatus>
+									<patientCurrentDisposition>Transported</patientCurrentDisposition>
+									<chiefComplaint>
+										Lolls,djvkjbsg\HeadInjury,
+									</chiefComplaint>
+									<systolicBloodPressure>160</systolicBloodPressure>
+									<diastolicBloodPressure>75</diastolicBloodPressure>
+									<pulseRate>66</pulseRate>
+									<respiratoryRate>50</respiratoryRate>
+									<temperature>97</temperature>
+									<pulseOximetry></pulseOximetry>
+									<bloodGlucoseLevel></bloodGlucoseLevel>
+									<mentalStatus>3255</mentalStatus>
+									<proceduresPerformed>
+										<ValueListURI xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">http://www.ger911.com/tep/
+										</ValueListURI>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">TreatmentComments:Kluges
+										</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">CombiKing:True</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">CPAP:True</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">IV:True</Value>
+
+									</proceduresPerformed>
+								</patientCare>
+
+
+								<patientCare>
+									<patientCareRecordID>00583159</patientCareRecordID>
+									<patientCareRecordDateTime>2016-03-28T19:21:06.21</patientCareRecordDateTime>
+									<triageStatus>331001</triageStatus>
+									<patientCurrentDisposition>Transported</patientCurrentDisposition>
+									<chiefComplaint>
+										Lolls,djvkjbsg\HeadInjury,
+									</chiefComplaint>
+									<systolicBloodPressure>160</systolicBloodPressure>
+									<diastolicBloodPressure>75</diastolicBloodPressure>
+									<pulseRate>66</pulseRate>
+									<respiratoryRate>50</respiratoryRate>
+									<temperature>97</temperature>
+									<pulseOximetry></pulseOximetry>
+									<bloodGlucoseLevel></bloodGlucoseLevel>
+									<mentalStatus>3255</mentalStatus>
+									<proceduresPerformed>
+										<ValueListURI xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">http://www.ger911.com/tep/
+										</ValueListURI>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">TreatmentComments:Kluges
+										</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">CombiKing:True</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">CPAP:True</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">IV:True</Value>
+
+									</proceduresPerformed>
+								</patientCare>
+
+
+								<patientCare>
+									<patientCareRecordID>00583159</patientCareRecordID>
+									<patientCareRecordDateTime>2016-03-28T19:24:39.357</patientCareRecordDateTime>
+									<triageStatus>331002</triageStatus>
+									<patientCurrentDisposition>Transported</patientCurrentDisposition>
+									<chiefComplaint>
+										Lolls,djvkjbsg\HeadInjury,
+									</chiefComplaint>
+									<systolicBloodPressure>160</systolicBloodPressure>
+									<diastolicBloodPressure>75</diastolicBloodPressure>
+									<pulseRate>66</pulseRate>
+									<respiratoryRate>50</respiratoryRate>
+									<temperature>97</temperature>
+									<pulseOximetry></pulseOximetry>
+									<bloodGlucoseLevel></bloodGlucoseLevel>
+									<mentalStatus>3255</mentalStatus>
+									<proceduresPerformed>
+										<ValueListURI xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">http://www.ger911.com/tep/
+										</ValueListURI>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">TreatmentComments:Kluges
+										</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">CombiKing:True</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">CPAP:True</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">IV:True</Value>
+
+									</proceduresPerformed>
+								</patientCare>
+
+
+								<patientCare>
+									<patientCareRecordID>00583159</patientCareRecordID>
+									<patientCareRecordDateTime>2016-03-28T19:37:20.747</patientCareRecordDateTime>
+									<triageStatus>331003</triageStatus>
+									<patientCurrentDisposition>Transported</patientCurrentDisposition>
+									<chiefComplaint>
+										Lolls,djvkjbsg\HeadInjury,
+									</chiefComplaint>
+									<systolicBloodPressure>160</systolicBloodPressure>
+									<diastolicBloodPressure>75</diastolicBloodPressure>
+									<pulseRate>66</pulseRate>
+									<respiratoryRate>50</respiratoryRate>
+									<temperature>97</temperature>
+									<pulseOximetry></pulseOximetry>
+									<bloodGlucoseLevel></bloodGlucoseLevel>
+									<mentalStatus>3255</mentalStatus>
+									<proceduresPerformed>
+										<ValueListURI xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">http://www.ger911.com/tep/
+										</ValueListURI>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">TreatmentComments:Kluges
+										</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">CombiKing:True</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">CPAP:True</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">IV:True</Value>
+
+									</proceduresPerformed>
+								</patientCare>
+
+
+								<patientCare>
+									<patientCareRecordID>00583159</patientCareRecordID>
+									<patientCareRecordDateTime>2016-03-28T19:38:44.247</patientCareRecordDateTime>
+									<triageStatus>331000</triageStatus>
+									<patientCurrentDisposition>Transported</patientCurrentDisposition>
+									<chiefComplaint>
+										Lolls,djvkjbsg\HeadInjury,
+									</chiefComplaint>
+									<systolicBloodPressure>160</systolicBloodPressure>
+									<diastolicBloodPressure>75</diastolicBloodPressure>
+									<pulseRate>66</pulseRate>
+									<respiratoryRate>50</respiratoryRate>
+									<temperature>97</temperature>
+									<pulseOximetry></pulseOximetry>
+									<bloodGlucoseLevel></bloodGlucoseLevel>
+									<mentalStatus>3255</mentalStatus>
+									<proceduresPerformed>
+										<ValueListURI xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">http://www.ger911.com/tep/
+										</ValueListURI>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">TreatmentComments:Kluges
+										</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">CombiKing:True</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">CPAP:True</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">IV:True</Value>
+
+									</proceduresPerformed>
+								</patientCare>
+
+
+								<patientCare>
+									<patientCareRecordID>00583159</patientCareRecordID>
+									<patientCareRecordDateTime>2016-03-28T19:49:06.93</patientCareRecordDateTime>
+									<triageStatus>331001</triageStatus>
+									<patientCurrentDisposition>Transported</patientCurrentDisposition>
+									<chiefComplaint>
+										Lolls,djvkjbsg\HeadInjury,
+									</chiefComplaint>
+									<systolicBloodPressure>160</systolicBloodPressure>
+									<diastolicBloodPressure>75</diastolicBloodPressure>
+									<pulseRate>66</pulseRate>
+									<respiratoryRate>50</respiratoryRate>
+									<temperature>97</temperature>
+									<pulseOximetry></pulseOximetry>
+									<bloodGlucoseLevel></bloodGlucoseLevel>
+									<mentalStatus>3255</mentalStatus>
+									<proceduresPerformed>
+										<ValueListURI xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">http://www.ger911.com/tep/
+										</ValueListURI>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">TreatmentComments:Kluges
+										</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">CombiKing:True</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">CPAP:True</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">IV:True</Value>
+
+									</proceduresPerformed>
+								</patientCare>
+
+
+								<patientCare>
+									<patientCareRecordID>00583159</patientCareRecordID>
+									<patientCareRecordDateTime>2016-03-28T19:52:31.59</patientCareRecordDateTime>
+									<triageStatus>331002</triageStatus>
+									<patientCurrentDisposition>Transported</patientCurrentDisposition>
+									<chiefComplaint>
+										Lolls,djvkjbsg\HeadInjury,
+									</chiefComplaint>
+									<systolicBloodPressure>160</systolicBloodPressure>
+									<diastolicBloodPressure>75</diastolicBloodPressure>
+									<pulseRate>66</pulseRate>
+									<respiratoryRate>50</respiratoryRate>
+									<temperature>97</temperature>
+									<pulseOximetry></pulseOximetry>
+									<bloodGlucoseLevel></bloodGlucoseLevel>
+									<mentalStatus>3255</mentalStatus>
+									<proceduresPerformed>
+										<ValueListURI xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">http://www.ger911.com/tep/
+										</ValueListURI>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">TreatmentComments:Kluges
+										</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">CombiKing:True</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">CPAP:True</Value>
+										<Value xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0">IV:True</Value>
+
+									</proceduresPerformed>
+								</patientCare>
+
+
+								<patientTransfer>
+									<destination>
+										<EDXLGeoPoliticalLocationType>
+											<Address>
+												<AddressLine_DestName></AddressLine_DestName>
+												<AddressLine_DestCode>1671</AddressLine_DestCode>
+											</Address>
+										</EDXLGeoPoliticalLocationType>
+									</destination>
+									<actualArrivalDateTime>2016-03-07T17:23:00</actualArrivalDateTime>
+									<actualDepartureTime>2016-03-07T17:23:00</actualDepartureTime>
+								</patientTransfer>
+								<!-- ADD:: potential to add another patientTransfer section if the 
+									transport destination changes <patientTransfer> <destination> <EDXLGeoLocation 
+									xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0"> <Point srsName="http://uri4" 
+									srsDimension="79228162514264337593543950334" axisLabels="axisLabels10 axisLabels11 
+									axisLabels12 " uomLabels="uomLabels10 uomLabels11 uomLabels12 " p7:id="ID4" 
+									xmlns:p7="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2"> 
+									<p7:pos srsName="http://uri4" srsDimension="79228162514264337593543950334" 
+									axisLabels="axisLabels10 axisLabels11 axisLabels12 " uomLabels="uomLabels10 
+									uomLabels11 uomLabels12 ">-1.7976931348623157E+308 1.7976931348623157E+308 
+									-2.3000000715255737 </p7:pos> </Point> </EDXLGeoLocation> </destination> 
+									<actualArrivalDateTime>0001-01-01T00:00:00-05:00</actualArrivalDateTime> 
+									<actualDepartureTime>0001-01-01T00:00:00-05:00</actualDepartureTime> </patientTransfer> 
+									<patientTransfer> <destinationETA>9999-12-31T23:59:59.9999999-05:00</destinationETA> 
+									<destination> <EDXLGeoLocation xmlns="urn:oasis:names:tc:emergency:edxl:ct:1.0"> 
+									<Point srsName="http://uri5" srsDimension="3" axisLabels="axisLabels13 axisLabels14 
+									axisLabels15 " uomLabels="uomLabels13 uomLabels14 uomLabels15 " p7:id="ID5" 
+									xmlns:p7="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/gml/3.2"> 
+									<p7:pos srsName="http://uri5" srsDimension="3" axisLabels="axisLabels13 axisLabels14 
+									axisLabels15 " uomLabels="uomLabels13 uomLabels14 uomLabels15 ">4.3000000715255737 
+									-1.7976931348623157E+308 1.7976931348623157E+308 </p7:pos> </Point> </EDXLGeoLocation> 
+									</destination> <actualArrivalDateTime>9999-12-31T23:59:59.9999999-05:00</actualArrivalDateTime> 
+									<actualDepartureTime>9999-12-31T23:59:59.9999999-05:00</actualDepartureTime> 
+									</patientTransfer> -->
+							</patientEncounter>
+						</patient>
+						<!-- <extension> <community xmlns="urn:oasis:names:tc:emergency:edxl:extension:1.0">http://uri1</community> 
+							<id xmlns="urn:oasis:names:tc:emergency:edxl:extension:1.0">http://uri1</id> 
+							<parameter xmlns="urn:oasis:names:tc:emergency:edxl:extension:1.0"> <nameURI 
+							xPath="xPath1">http://uri1</nameURI> <value uom="uom1">Token1</value> <value 
+							uom="uom2">Token2</value> <value uom="uom3">Token3</value> </parameter> <parameter 
+							xmlns="urn:oasis:names:tc:emergency:edxl:extension:1.0"> <nameURI xPath="xPath2">http://uri2</nameURI> 
+							<value uom="uom4">Token4</value> <value uom="uom5">Token5</value> <value 
+							uom="uom6">Token6</value> </parameter> <parameter xmlns="urn:oasis:names:tc:emergency:edxl:extension:1.0"> 
+							<nameURI xPath="xPath3">http://uri3</nameURI> <value uom="uom7">Token7</value> 
+							<value uom="uom8">Token8</value> <value uom="uom9">Token9</value> </parameter> 
+							</extension> <extension> <community xmlns="urn:oasis:names:tc:emergency:edxl:extension:1.0">http://uri2</community> 
+							<id xmlns="urn:oasis:names:tc:emergency:edxl:extension:1.0">http://uri2</id> 
+							<parameter xmlns="urn:oasis:names:tc:emergency:edxl:extension:1.0"> <nameURI 
+							xPath="xPath4">http://uri4</nameURI> <value uom="uom10">Token10</value> <value 
+							uom="uom11">Token11</value> <value uom="uom12">Token12</value> </parameter> 
+							<parameter xmlns="urn:oasis:names:tc:emergency:edxl:extension:1.0"> <nameURI 
+							xPath="xPath5">http://uri5</nameURI> <value uom="uom13">Token13</value> <value 
+							uom="uom14">Token14</value> <value uom="uom15">Token15</value> </parameter> 
+							<parameter xmlns="urn:oasis:names:tc:emergency:edxl:extension:1.0"> <nameURI 
+							xPath="xPath6">http://uri6</nameURI> <value uom="uom16">Token16</value> <value 
+							uom="uom17">Token17</value> <value uom="uom18">Token18</value> </parameter> 
+							</extension> <extension> <community xmlns="urn:oasis:names:tc:emergency:edxl:extension:1.0">http://uri3</community> 
+							<id xmlns="urn:oasis:names:tc:emergency:edxl:extension:1.0">http://uri3</id> 
+							<parameter xmlns="urn:oasis:names:tc:emergency:edxl:extension:1.0"> <nameURI 
+							xPath="xPath7">http://uri7</nameURI> <value uom="uom19">Token19</value> <value 
+							uom="uom20">Token20</value> <value uom="uom21">Token21</value> </parameter> 
+							<parameter xmlns="urn:oasis:names:tc:emergency:edxl:extension:1.0"> <nameURI 
+							xPath="xPath8">http://uri8</nameURI> <value uom="uom22">Token22</value> <value 
+							uom="uom23">Token23</value> <value uom="uom24">Token24</value> </parameter> 
+							<parameter xmlns="urn:oasis:names:tc:emergency:edxl:extension:1.0"> <nameURI 
+							xPath="xPath9">http://uri9</nameURI> <value uom="uom25">Token25</value> <value 
+							uom="uom26">Token26</value> <value uom="uom27">Token27</value> </parameter> 
+							</extension> -->
+					</TEPMessage>
+
+					<!-- This is a proper Link Payload <link:LinkContent xmlns:link="http://www.saic.com/precis/2009/06/payloads/link"> 
+						<link:Protocol>http</link:Protocol> <link:Address>ifuicds-test1.picahld.net/ChlorineSpillNorfolk.kml</link:Address> 
+						</link:LinkContent> -->
+				</ulex:StructuredPayload>
+			</preciss:WorkProduct>
+		</wp:PublishProductRequest>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+

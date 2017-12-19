@@ -1,0 +1,140 @@
+<str:WorkProduct 
+    xmlns:str="http://www.saic.com/precis/2009/06/structures">
+    <ulex:PackageMetadata 
+        xmlns:ulex="ulex:message:structure:1.0">
+        <ulex:DataItemID>HCML-1ba9dc69-6f80-4119-9506-58f449d53cb1</ulex:DataItemID>
+        <ulex:DataItemReferenceID>HCML-1ba9dc69-6f80-4119-9506-58f449d53cb1</ulex:DataItemReferenceID>
+        <ns:DataItemStatus ns:label="UICDS Work Product Status" ns:codespace="http://uicds.org/1.0/codespace/workproduct/status" ns:code="Active" 
+            xmlns:ns="http://ucore.gov/ucore/2.0"/>
+        <ulex:DataOwnerMetadata>
+            <ns:DataOwnerIdentifier 
+                xmlns:ns="http://ucore.gov/ucore/2.0">
+                <ns1:Organization 
+                    xmlns:ns1="http://metadata.dod.mil/mdr/ns/DDMS/2.0/">
+                    <ns1:name>ucids.org</ns1:name>
+                </ns1:Organization>
+            </ns:DataOwnerIdentifier>
+            <ns:DataOwnerContact 
+                xmlns:ns="http://ucore.gov/ucore/2.0">
+                <ns1:Organization 
+                    xmlns:ns1="http://metadata.dod.mil/mdr/ns/DDMS/2.0/">
+                    <ns1:name>http://uicds.us</ns1:name>
+                </ns1:Organization>
+            </ns:DataOwnerContact>
+            <ulex:DataOwnerMetadataDomainAttribute>
+                <ulex:DomainName>UICDS EM Domain</ulex:DomainName>
+            </ulex:DataOwnerMetadataDomainAttribute>
+        </ulex:DataOwnerMetadata>
+        <ns:DisseminationCriteria 
+            xmlns:ns="http://ucore.gov/ucore/2.0"/>
+        <str:WorkProductIdentification>
+            <base:Identifier 
+                xmlns:base="http://www.saic.com/precis/2009/06/base">HCML-1ba9dc69-6f80-4119-9506-58f449d53cb1
+                                                
+            </base:Identifier>
+            <base:Version 
+                xmlns:base="http://www.saic.com/precis/2009/06/base">2
+                                                
+            </base:Version>
+            <base:Type 
+                xmlns:base="http://www.saic.com/precis/2009/06/base">HCML
+                                                
+            </base:Type>
+            <base:Checksum 
+                xmlns:base="http://www.saic.com/precis/2009/06/base">Fri Sep 22 19:57:30 UTC 2017:2:3:4291876343
+                                                
+            </base:Checksum>
+            <base:State 
+                xmlns:base="http://www.saic.com/precis/2009/06/base">Active
+                                                
+            </base:State>
+        </str:WorkProductIdentification>
+        <str:WorkProductProperties>
+            <base:Created 
+                xmlns:base="http://www.saic.com/precis/2009/06/base">2017-09-22T19:57:29.517+00:00
+                                                
+            </base:Created>
+            <base:CreatedBy 
+                xmlns:base="http://www.saic.com/precis/2009/06/base">admin@qauicds.geraws.local
+                                                
+            </base:CreatedBy>
+            <base:LastUpdated 
+                xmlns:base="http://www.saic.com/precis/2009/06/base">2017-09-22T19:57:30.182+00:00
+                                                
+            </base:LastUpdated>
+            <base:LastUpdatedBy 
+                xmlns:base="http://www.saic.com/precis/2009/06/base">admin@qauicds.geraws.local
+                                                                                    
+            </base:LastUpdatedBy>
+            <base:Kilobytes 
+                xmlns:base="http://www.saic.com/precis/2009/06/base">3
+                                                                                    
+            </base:Kilobytes>
+            <base:MimeType 
+                xmlns:base="http://www.saic.com/precis/2009/06/base">application/uicds+xml
+                                                                                    
+            </base:MimeType>
+            <base:AssociatedGroups 
+                xmlns:base="http://www.saic.com/precis/2009/06/base">
+                <base:Identifier>IG-27a47a0b-6ac0-4d62-8a12-2a6af46bcee8</base:Identifier>
+            </base:AssociatedGroups>
+        </str:WorkProductProperties>
+    </ulex:PackageMetadata>
+    <Digest 
+        xmlns="http://ucore.gov/ucore/2.0" 
+        xmlns:ns1="http://metadata.dod.mil/mdr/ns/DDMS/2.0/" 
+        xmlns:ns="http://ucore.gov/ucore/2.0" 
+        xmlns:base="http://www.saic.com/precis/2009/06/base" 
+        xmlns:ulex="ulex:message:structure:1.0">
+        <DigestMetadata/>
+        <Event id="">
+            <Descriptor>&amp;lt;Empty /&amp;gt;</Descriptor>
+            <Identifier p7:code="ActivityName" p7:codespace="http://niem.gov/niem/niem-core/2.0" p7:label="ID" 
+                xmlns:p7="http://ucore.gov/ucore/2.0"/>
+            <What p7:code="" p7:codespace="http://ucore.gov/ucore/2.0/codespace/" 
+                xmlns:p7="http://ucore.gov/ucore/2.0"/>
+        </Event>
+        <Location id="">
+            <GeoLocation>
+                <Point>
+                    <Point p9:id="point1" srsName="urn:ogc:def:crs:EPSG:6.6:4326" 
+                        xmlns="http://www.opengis.net/gml/3.2" 
+                        xmlns:p9="http://www.opengis.net/gml/3.2">
+                        <p9:pos>0 0</p9:pos>
+                    </Point>
+                </Point>
+            </GeoLocation>
+        </Location>
+        <LocatedAt>
+            <EntityRef/>
+            <LocationRef/>
+        </LocatedAt>
+    </Digest>
+    <ulex:StructuredPayload 
+        xmlns:ulex="ulex:message:structure:1.0">
+        <ulex:StructuredPayloadMetadata>
+            <ulex:CommunityURI>HCML</ulex:CommunityURI>
+            <ulex:CommunityVersion/>
+        </ulex:StructuredPayloadMetadata>
+        <GerHcml 
+            xmlns:ns1="http://metadata.dod.mil/mdr/ns/DDMS/2.0/" 
+            xmlns:ns="http://ucore.gov/ucore/2.0" 
+            xmlns:base="http://www.saic.com/precis/2009/06/base">
+            <Root>
+                <Client Id="DHA" />
+                <Domains>
+                    <Domain Name="Root Domain" Description="Root Domain">
+                        <EntityTypes>
+                            <EntityType Name="Patient Information" DisplayMeasure="Patient ID" UniqueMeasure="Patient ID">
+                                <Entities>
+                                    <Entity Incident="Test Incident" Patient_x0020_ID="gertest92217-dha-2" Last_x0020_Name="" First_x0020_Name="" Gender="" DOB="" Age="" Weight="" Address="" City="" State="" ZIP="" Phone="" Triage_x0020_Status="" Triage_x0020_Time="" Head_x0020_Injury="" C-Spine="" Blunt_x0020_Trauma="" Penetrating_x0020_Injury="" Burn="" Fracture="" Laceration="" Amputation="" Medical="" Cardiac="" Respiratory="" OBGYN="" HAZMAT_x0020_Exposure="" Diabetic="" Complaint_x0020_Comments="" Transport_x0020_Destination="" JurisdictionUnit="" Departure_x0020_Time="" Arrival_x0020_Time="" Respirations="" Pulse="" Systolic="" Diastolic="" Palpated="" Temperature="" Mental_x0020_Status="" Medications="" Medical_x0020_Problems="" Allergies="" Last_x0020_Oral_x0020_Intake="" BVM="" ET="" Oxygen="" OxygenLitersPerMinute="" Bleeding_x0020_Control="" Spinal_x0020_Immobilization="" IV="" Combi_x0020_King="" CPAP="" Gross_x0020_Decontamination="" Final_x0020_Decontamination="" Treatment_x0020_Comments="" Division="Alpha" FloorNumberUnit="" Position="" HandheldID="" Latitude="" Longitude="" _x0030_a_x0020_Military_x0020_Status="" Modified_x0020_By_x0020_External_x0020_System="DHA" Modified_x0020_By_x0020_External_x0020_User="GER Adam Buckley" _x0031__x0020_Branch_x0020_of_x0020_Service="" S_x0020_Military_x0020_Unit="" Grade="" PAD_x0020_Identifier="" PT_CheckInTime="" PT_CheckOutTime="" PT_InpatientArea="" PT_InpatientOther="" ID="4655" GUID="2ccc39a1-ddf3-480d-b86b-020cd6e46480" EntityTypeID="3" DomainID="1" IsActive="True" Version="AAAAAAABIcw=" CreatedBy="7" CreatedOn="9/22/2017 8:17:12 PM" ModifiedBy="7" ModifiedOn="9/22/2017 8:17:12 PM" IconFileID="" />
+                                    <Entity Incident="Test Incident" Patient_x0020_ID="ger92217-1" Last_x0020_Name="" First_x0020_Name="" Gender="" DOB="" Age="" Weight="" Address="" City="" State="" ZIP="" Phone="" Triage_x0020_Status="Immediate" Triage_x0020_Time="" Head_x0020_Injury="" C-Spine="" Blunt_x0020_Trauma="" Penetrating_x0020_Injury="" Burn="" Fracture="" Laceration="" Amputation="" Medical="" Cardiac="" Respiratory="" OBGYN="" HAZMAT_x0020_Exposure="" Diabetic="" Complaint_x0020_Comments="" Transport_x0020_Destination="" JurisdictionUnit="" Departure_x0020_Time="" Arrival_x0020_Time="" Respirations="" Pulse="" Systolic="" Diastolic="" Palpated="" Temperature="" Mental_x0020_Status="" Medications="" Medical_x0020_Problems="" Allergies="" Last_x0020_Oral_x0020_Intake="" BVM="" ET="" Oxygen="" OxygenLitersPerMinute="" Bleeding_x0020_Control="" Spinal_x0020_Immobilization="" IV="" Combi_x0020_King="" CPAP="" Gross_x0020_Decontamination="" Final_x0020_Decontamination="" Treatment_x0020_Comments="" Division="Alpha" FloorNumberUnit="" Position="" HandheldID="" Latitude="" Longitude="" _x0030_a_x0020_Military_x0020_Status="" Modified_x0020_By_x0020_External_x0020_System="DHA" Modified_x0020_By_x0020_External_x0020_User="GER Adam Buckley" _x0031__x0020_Branch_x0020_of_x0020_Service="" S_x0020_Military_x0020_Unit="" Grade="" PAD_x0020_Identifier="" PT_CheckInTime="" PT_CheckOutTime="" PT_InpatientArea="" PT_InpatientOther="" ID="4654" GUID="7651f6d5-2fd6-46d5-ada7-13e0c6bceb26" EntityTypeID="3" DomainID="1" IsActive="True" Version="AAAAAAABIcs=" CreatedBy="7" CreatedOn="9/22/2017 7:48:52 PM" ModifiedBy="7" ModifiedOn="9/22/2017 8:09:02 PM" IconFileID="" />
+                                </Entities>
+                            </EntityType>
+                        </EntityTypes>
+                    </Domain>
+                </Domains>
+            </Root>
+        </GerHcml>
+    </ulex:StructuredPayload>
+</str:WorkProduct>
